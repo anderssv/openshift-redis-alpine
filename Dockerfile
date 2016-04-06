@@ -42,7 +42,7 @@ RUN set -x \
 	&& rm -r /usr/src/redis \
 	&& apk del .build-deps
 
-RUN mkdir /data && chown redis:redis /data
+RUN mkdir /data && chown redis:redis /data && chmod a+rwx /data
 VOLUME /data
 WORKDIR /data
 
